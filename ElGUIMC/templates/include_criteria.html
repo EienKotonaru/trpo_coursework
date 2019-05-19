@@ -1,0 +1,13 @@
+<div class="row" >
+    <div class="col s12 m4 l4 xl4 valign-wrapper" style="margin-top: 10px;">
+        <p>{{ criteria.name }}, {{ criteria.measure }}</p>
+    </div>
+    <div class="input-field col s12 m8 l8 xl8">
+        <input type="text" name="value" class="validate" required aria-required="true">
+        <label for="name">Значение критерия</label>
+        <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+    </div>
+    <div class="input-field col s12 m8 l8 xl8" style="display: none;">
+        <input readonly type="text" name="criteria_id" class="validate" required aria-required="true" value="{{ criteria.id }}">
+    </div>
+</div>

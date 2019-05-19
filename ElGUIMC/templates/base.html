@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>{% block title %}{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ url_for('static', filename='css/base.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        {%block custom_css%}
+
+        {%endblock%}
+
+    </head>
+    <body>
+        <nav class="blue darken-1">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo left"><img style="height: 55px; padding-left: 64px; margin: 4px;" src="{{ url_for('static', filename='images/logo.svg') }}"/></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/create_group">Создать группу критериев</a></li>
+                    <li><a href="/groups">Управление критериями</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+    </body>
+
+   <footer>
+            <div class="blue darken-1 footer-container">
+                <p class="white-text left footer-reg">Могильников Илья, ИУ5-11М</p>
+                <p class="white-text right version_base" >Версия 0.0.1</p>
+            </div>
+        </footer>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+
+    {%block custom_js%}
+
+    {%endblock%}
+
+</html>
+

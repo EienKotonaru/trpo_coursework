@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Вход в систему{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="criteria_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Вход в систему</h4>
+        <form id="registration" action="/login" method="POST">
+            <div class="row">
+                <div class="input-field col s12 m12 l12 xl12">
+                    <input type="text" data-length="50" id="email" maxlength="50" name="email" class="validate" required aria-required="true">
+                    <label for="email">Электронная почта</label>
+                    <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m12 l12 xl12">
+                    <input type="text" data-length="30" id="password" minlength="8" name="password" class="validate" required aria-required="true" title="Длина пароля - не менее 8 символов">
+                    <label for="password">Пароль</label>
+                    <span class="helper-text" data-error="Длина пароля - не менее 8 символов" data-success="">Обязательное поле</span>
+                </div>
+            </div>
+            <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Войти</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

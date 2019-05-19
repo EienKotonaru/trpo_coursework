@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Добавить группу{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="criteria_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Внесите значения критериев в группу "{{ group.name }}"</h4>
+
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        <form action="/add_values/{{ group.id }}" method="POST">
+            {% for criteria in criterias %}
+                {% include 'include_criteria.html' with context %}
+            {% endfor %}
+            <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Сохранить значения</button>
+            </div>
+        </form>
+
+        {% for criteria,values in values_history.items() %}
+            <div class="row" >
+                <div class="col s12 m12 l12 xl12 valign-wrapper" style="margin-top: 10px;">
+                    <h4>{{ criteria.name }}</h4>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Значение</th>
+                            <th>Дата</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for value in values %}
+                            <tr>
+                                <td>{{ value.value }}</td>
+                                <td>{{ value.assignment_time }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

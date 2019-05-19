@@ -1,0 +1,11 @@
+.footer-container {
+    position:fixed !important;
+    width: 100%;
+    padding: 5px;
+    bottom: -2px !important;
+    z-index: 5 !important;
+}
+
+main {
+    padding-bottom: 64px;
+}

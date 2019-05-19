@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}Добавить критерий{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="criteria_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Добавить критерий в группу {{ group.name }}</h4>
+        <p>Описание: {{ group.description }}</p>
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        <form id="criteria_template" class="criteria" method="POST" style="display: none;">
+            <div class="row">
+                <p class="p_id" style="display: none"></p>
+                <div class="input-field col s12 m4 l4 xl4">
+                    <input type="text" data-length="30" id="name" maxlength="30" name="name" class="validate" required aria-required="true" title="Используйте только буквы для заполнения данного поля" pattern="^[А-Яа-яЁёA-Za-z\s]+$">
+                    <label for="name">Название критерия</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m2 l2 xl2">
+                    <input type="text" data-length="1" id="weight" maxlength="1" name="weight" class="validate" required aria-required="true" title="Используйте только цифры для заполнения данного поля" pattern="^[0-9]+$">
+                    <label for="weight">Вес критерия</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только цифры." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m3 l3 xl3">
+                    <input type="text" data-length="10" id="measure" maxlength="10" name="measure" class="validate" required aria-required="true">
+                    <label for="measure">Единицы измерения</label>
+                    <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="col12 s6 m2 l2 center-align">
+                    <button class="blue darken-1 waves-effect btn-large btn-custom save_criteria"><i class="material-icons">save</i></button>
+                    <button class="blue darken-1 waves-effect btn-large btn-custom delete_criteria"><i class="material-icons">delete</i></button>
+                </div>
+            </div>
+        </form>
+
+        {% for criteria in criterias %}
+            <form class="criteria" id="{{ loop.index0 }}" method="POST" >
+            <div class="row">
+                <p class="p_id" style="display: none">{{ criteria.id }}</p>
+                <div class="input-field col s12 m4 l4 xl4">
+                    <input type="text" value="{{ criteria.name }}" data-length="30" id="name" maxlength="30" name="name" class="validate" required aria-required="true" title="Используйте только буквы для заполнения данного поля" pattern="^[А-Яа-яЁёA-Za-z\s]+$">
+                    <label for="name">Название критерия</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m2 l2 xl2">
+                    <input type="text" value="{{ criteria.weight }}" data-length="30" id="weight" maxlength="1" name="weight" class="validate" required aria-required="true" title="Используйте только цифры для заполнения данного поля" pattern="^[0-9]+$">
+                    <label for="weight">Вес критерия</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только цифры." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m3 l3 xl3">
+                    <input type="text" value="{{ criteria.measure }}" data-length="10" id="measure" maxlength="10" name="measure" class="validate" required aria-required="true">
+                    <label for="measure">Единицы измерения</label>
+                    <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="col12 s6 m2 l2 center-align">
+                    <button class="blue darken-1 waves-effect btn-large btn-custom save_criteria"><i class="material-icons">save</i></button>
+                    <button class="blue darken-1 waves-effect btn-large btn-custom delete_criteria"><i class="material-icons">delete</i></button>
+                </div>
+            </div>
+        </form>
+        {% endfor %}
+
+        <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+            <button class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Добавить еще критерий</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+    <script src="{{ url_for('static', filename='js/create_criteria.js') }}"></script>
+{%endblock%}
