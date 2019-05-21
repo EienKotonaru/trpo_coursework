@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contingent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+  <persons person_count="435" stage_count="478">
+    <person uuid="067dd722-7f8c-11e8-87f3-005056962144" fio="Затулина Алина Викторовна" lastname="Затулина" firstname="Алина" middlename="Викторовна" birthdate="1996-11-20">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="db7cd564-d596-11dc-b2f1-003048351d16" name="Женский" alias="gender.female"/>
+      <stages>
+        <stage id="06972a24-7f8c-11e8-8808-005056962143" prev_uuid="06972a24-7f8c-11e8-8808-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="18Ц001" start="2018-09-01" end="2023-08-31" target="1" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="85504286-fc2a-11e3-80cf-005056960017" name="По квоте приёма лиц, имеющих особое право" shortname="особая квота" alias="enrollment.special-quota"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="f294a23d-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="2203016162" specialization_uuid="c385c342-4c4e-11e7-830f-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="1" abbr="МТ8Ц-11Б" index="1" semester="1" term_in_year="1" diplom="0" students_budget="4" students_pay="0" students_real="4" students_pay_russian="0" students_pay_foreign="0" students_budget_real="4" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="8e33be2e-3d75-11e8-bc7d-005056960017" next_id="8e33b672-3d75-11e8-81d3-005056960017" prev_id="8e33be2e-3d75-11e8-bc7d-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="8e33b5fa-3d75-11e8-a84b-005056960017" education_start_date="2018-09-01" semester_shift="0" planned_end_date="2023-08-31">
+            <speciality full_code="2203016162" full_code_formatted="22.03.01_61" speciality_code_formatted="22.03.01" specialization_uuid="c385c342-4c4e-11e7-830f-005056960017" uuid="c385c342-4c4e-11e7-830f-005056960017" specialization_code="61" specialization_title="Материаловедение в машиностроении (адаптационный план)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d5385eba-e743-11e3-b34f-024716c10819" speciality_code="01" speciality_title="Материаловедение и технологии материалов" speciality_priority="0" direction_uuid="d537e386-e743-11e3-8baf-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d5379124-e743-11e3-9903-024716c10819" ugs_code="22" ugs_title="Технологии материалов" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="c385c342-4c4e-11e7-830f-005056960017"/>
+          </group>
+          <speciality id="c385c342-4c4e-11e7-830f-005056960017" sindex="2203016162" name="Материаловедение и технологии материалов"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2018-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions/>
+          <grants>
+            <grant id="3701edf2-b7f4-11e8-a1f9-005056960017" alias="grant.gov-academic-first" name="Государственная академическая стипендия для студентов 1 курса 1 семестра" type="9d329e36-d59d-11dc-82fc-003048351d16" start="2018-09-01" end="2019-01-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="425f3db2-6c0d-11e4-b44f-3b78be5078d4" fio="Иванов Иван Иванович" lastname="Иванов" firstname="Иван" middlename="Иванович" birthdate="2000-01-01">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="d0475c5a-d596-11dc-ae45-003048351d16" name="Мужской" alias="gender.male"/>
+      <stages>
+        <stage id="c5969ffa-167a-11e5-8e8b-005056962143" prev_uuid="c5969ffa-167a-11e5-8e8b-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="15Ц002" start="2015-09-01" end="2020-08-31" target="1" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="85504286-fc2a-11e3-80cf-005056960017" name="По квоте приёма лиц, имеющих особое право" shortname="особая квота" alias="enrollment.special-quota"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="66cee394-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="0903016262" specialization_uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="4" abbr="ИУ5Ц-71Б" index="1" semester="7" term_in_year="1" diplom="0" students_budget="2" students_pay="0" students_real="2" students_pay_russian="0" students_pay_foreign="0" students_budget_real="2" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="d1e4f68a-4ce7-11e7-9e41-005056960017" next_id="d1e503c8-4ce7-11e7-b57a-005056960017" prev_id="d1e4e88e-4ce7-11e7-bd18-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="d1e483b2-4ce7-11e7-a97b-005056960017" education_start_date="2015-09-01" semester_shift="0" planned_end_date="2020-08-31">
+            <speciality full_code="0903016262" full_code_formatted="09.03.01_62" speciality_code_formatted="09.03.01" specialization_uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" specialization_code="62" specialization_title="Системы обработки информации и управления (адаптационный план)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d4e57d8a-e743-11e3-9439-024716c10819" speciality_code="01" speciality_title="Информатика и вычислительная техника" speciality_priority="0" direction_uuid="d4e50382-e743-11e3-a959-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d4e4b210-e743-11e3-988d-024716c10819" ugs_code="09" ugs_title="Информатика и вычислительная техника" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="ec10ea86-4c4d-11e7-b6ee-005056960017"/>
+          </group>
+          <speciality id="ec10ea86-4c4d-11e7-b6ee-005056960017" sindex="0903016262" name="Информатика и вычислительная техника"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2015-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants>
+            <grant id="63f8ae12-d5ba-11e7-a456-005056960017" alias="grant.gov-social-elders-diseased" name="Государственная социальная стипендия для студентов 3 и 4 курсов бакалавриата, 3-6 курсов специалитета, 1 и 2 курсов магистратуры из числа детей-сирот и детей, оставшихся без попечения родителей, детей-инвалидов, инвалидов I и II групп, инвалидов с детства, лиц, подвергшихся радиации вследствие катастрофы на Чернобыльской АЭС и иных радиационных катастроф, ветеранов боевых действий" type="bc8d3fe0-288c-11e0-8bca-003048c6b34e" start="2017-09-01" end="2019-08-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="420aaf4a-6c0d-11e4-9c03-b7906a3ccba6" fio="Степанов Александр Денисович" lastname="Степанов" firstname="Александр" middlename="Денисович" birthdate="1992-05-03">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="d0475c5a-d596-11dc-ae45-003048351d16" name="Мужской" alias="gender.male"/>
+      <stages>
+        <stage id="67b8a137-8636-4c20-9649-00000001dfed" prev_uuid="67b8a137-8636-4c20-9649-00000001dfed" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="16Ц054" start="2016-09-01" end="2021-08-13" target="0" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="1dec90f0-35ca-11df-8128-003048c6b34e" name="Общий конкурс" shortname="общий конкурс" alias="enrollment.general"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="dcf31ca3-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="2217000062" specialization_uuid="16fd5112-6675-11e0-96ed-003048c6b34e" qualification_code="62" multiplicity="first" studyform="fulltime" course="4" abbr="МТ4-81Ц" index="1" semester="8" term_in_year="2" diplom="1" students_budget="1" students_pay="0" students_real="0" students_pay_russian="0" students_pay_foreign="0" students_budget_real="0" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="47b95090-51d3-11e3-8806-005056960017" next_id="47b95090-51d3-11e3-8806-005056960017" prev_id="47ab3b40-51d3-11e3-9f88-005056960017" up_id="" down_id="" year="2014" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="74ab6378-e741-11e3-bfa2-024716c10819" education_start_date="2011-09-01" semester_shift="0" planned_end_date="2021-08-31">
+            <speciality full_code="2217000062" full_code_formatted="2217000062" speciality_code_formatted="221700.62" specialization_uuid="16fd5112-6675-11e0-96ed-003048c6b34e" uuid="16fd5112-6675-11e0-96ed-003048c6b34e" specialization_code="00" specialization_title="" specialization_period="4 years" speciality_period="4 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="4cdccf0c-e0e4-11e3-84da-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="59095782-e0e4-11e3-ad69-024716c10819" speciality_code="00" speciality_title="Стандартизация и метрология" speciality_priority="0" direction_uuid="5906d6c4-e0e4-11e3-a25a-024716c10819" direction_code="17" direction_title="17" direction_cost_group="" ugs_uuid="57c44aa8-e0e4-11e3-b0cc-024716c10819" ugs_code="22" ugs_title="22" generation_uuid="4cd0f5ba-e0e4-11e3-b78c-024716c10819" generation_title="Поколение 3" generation_next="" generation_begin="2011-08-30" generation_end="2011-08-31" generation_spectype="" generation_specformat="{ugs}{direction}{speciality}{specialization}{qualification}" id="16fd5112-6675-11e0-96ed-003048c6b34e"/>
+          </group>
+          <speciality id="16fd5112-6675-11e0-96ed-003048c6b34e" sindex="2217000062" name=""/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2016-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants/>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="4190bb4a-6c0d-11e4-bca9-3f5116080223" fio="Данилова Дарья Георгиевна" lastname="Данилова" firstname="Дарья" middlename="Георгиевна" birthdate="1995-11-26">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="db7cd564-d596-11dc-b2f1-003048351d16" name="Женский" alias="gender.female"/>
+      <stages>
+        <stage id="37fba8a8-fb77-11e3-80c6-005056962143" prev_uuid="37fba8a8-fb77-11e3-80c6-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="15Ц032" start="2014-09-01" end="2020-08-31" target="0" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="1dec90f0-35ca-11df-8128-003048c6b34e" name="Общий конкурс" shortname="общий конкурс" alias="enrollment.general"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="1103a32c-ae53-11e0-8388-003048c6b34e" grouptype="student" full_code="1503046162" specialization_uuid="04532568-4c4f-11e7-88d1-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="4" abbr="РК9Ц-71Б" index="1" semester="7" term_in_year="1" diplom="0" students_budget="5" students_pay="0" students_real="6" students_pay_russian="0" students_pay_foreign="0" students_budget_real="6" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="f206860c-4cee-11e7-8f2a-005056960017" next_id="f20693ae-4cee-11e7-beac-005056960017" prev_id="f20676a8-4cee-11e7-ac85-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="f205e652-4cee-11e7-993c-005056960017" education_start_date="2015-09-01" semester_shift="0" planned_end_date="2020-08-31">
+            <speciality full_code="1503046162" full_code_formatted="15.03.04_61" speciality_code_formatted="15.03.04" specialization_uuid="04532568-4c4f-11e7-88d1-005056960017" uuid="04532568-4c4f-11e7-88d1-005056960017" specialization_code="61" specialization_title="Автоматизация технологических процессов и производств (адаптационный план)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d9b7d02e-e743-11e3-bed4-024716c10819" speciality_code="04" speciality_title="Автоматизация технологических процессов и производств" speciality_priority="0" direction_uuid="d5c2ea58-e743-11e3-9da9-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d5073696-e743-11e3-8daf-024716c10819" ugs_code="15" ugs_title="Машиностроение" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="04532568-4c4f-11e7-88d1-005056960017"/>
+          </group>
+          <speciality id="04532568-4c4f-11e7-88d1-005056960017" sindex="1503046162" name="Автоматизация технологических процессов и производств"/>
+          <state id="26933bca-d497-11dc-b99b-003048351d16" alias="state.vacation" name="В академическом отпуске" start="2018-09-18" end="2019-02-06"/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants>
+            <grant id="e9c89dd4-b4ab-11e7-b8e0-005056960017" alias="grant.gov-social-elders-diseased" name="Государственная социальная стипендия для студентов 3 и 4 курсов бакалавриата, 3-6 курсов специалитета, 1 и 2 курсов магистратуры из числа детей-сирот и детей, оставшихся без попечения родителей, детей-инвалидов, инвалидов I и II групп, инвалидов с детства, лиц, подвергшихся радиации вследствие катастрофы на Чернобыльской АЭС и иных радиационных катастроф, ветеранов боевых действий" type="bc8d3fe0-288c-11e0-8bca-003048c6b34e" start="2017-09-01" end="2020-08-30"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="9cfcf44a-4659-11e5-9fea-005056960018" fio="Зеленов Тимофей Альбертович" lastname="Зеленов" firstname="Тимофей" middlename="Альбертович" birthdate="1997-08-18">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="d0475c5a-d596-11dc-ae45-003048351d16" name="Мужской" alias="gender.male"/>
+      <stages>
+        <stage id="9f20c66e-66d9-11e7-ace0-005056962143" prev_uuid="9f20c66e-66d9-11e7-ace0-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="17Ц001" start="2017-09-01" end="2022-08-31" target="1" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="85504286-fc2a-11e3-80cf-005056960017" name="По квоте приёма лиц, имеющих особое право" shortname="особая квота" alias="enrollment.special-quota"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="66cee394-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="0903019262" specialization_uuid="3030cf60-96cc-11e7-865b-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="2" abbr="ИУ5Ц-32Б" index="2" semester="3" term_in_year="1" diplom="0" students_budget="4" students_pay="0" students_real="4" students_pay_russian="0" students_pay_foreign="0" students_budget_real="4" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="a6fda0e4-4ce6-11e7-bd7d-005056960017" next_id="a6fdae68-4ce6-11e7-b097-005056960017" prev_id="a6fd9342-4ce6-11e7-8d6a-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="a6fd6318-4ce6-11e7-8ee9-005056960017" education_start_date="2017-09-01" semester_shift="0" planned_end_date="2022-08-31">
+            <speciality full_code="0903019262" full_code_formatted="09.03.01_92" speciality_code_formatted="09.03.01" specialization_uuid="3030cf60-96cc-11e7-865b-005056960017" uuid="3030cf60-96cc-11e7-865b-005056960017" specialization_code="92" specialization_title="Системы обработки информации и управления (адаптационный план №2)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d4e57d8a-e743-11e3-9439-024716c10819" speciality_code="01" speciality_title="Информатика и вычислительная техника" speciality_priority="0" direction_uuid="d4e50382-e743-11e3-a959-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d4e4b210-e743-11e3-988d-024716c10819" ugs_code="09" ugs_title="Информатика и вычислительная техника" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="3030cf60-96cc-11e7-865b-005056960017"/>
+          </group>
+          <speciality id="3030cf60-96cc-11e7-865b-005056960017" sindex="0903019262" name="Информатика и вычислительная техника"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2017-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants>
+            <grant id="b9f83526-89c9-11e8-a281-005056960017" alias="grant.gov-academic-good" name="Государственная академическая стипендия студентам, обучающимся на «хорошо» и «хорошо и отлично»" type="7af3522a-d59d-11dc-a8f8-003048351d16" start="2018-07-01" end="2019-01-31"/>
+            <grant id="d5096b50-963a-11e8-b010-005056960017" alias="grant.gov-social-high-freshmen-disease" name="Повышенная государственная социальная стипендия для студентов 1 и 2 курсов из числа детей-сирот и детей, оставшихся без попечения родителей, детей-инвалидов, инвалидов I и II групп, инвалидов с детства, лиц, подвергшихся радиации вследствие катастрофы на Чернобыльской АЭС и иных радиационных катастроф, ветеранов боевых действий, имеющим оценки успеваемости «хорошо» и «отлично»" type="e351a556-86c2-11e3-8096-005056960017" start="2018-07-01" end="2019-01-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="f962526c-8332-11e7-b91d-005056960018" fio="Игнатьев Селиверст Геннадиевич" lastname="Игнатьев" firstname="Селиверст" middlename="Геннадиевич" birthdate="1998-09-01">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="6a888220-d499-11dc-9c46-003048351d16" name="Проживает постоянно" shortname="проживает постоянно" alias="dormitory.true"/>
+      <gender id="d0475c5a-d596-11dc-ae45-003048351d16" name="Мужской" alias="gender.male"/>
+      <stages>
+        <stage id="138347ba-5bd2-11e7-a5d5-005056962143" prev_uuid="138347ba-5bd2-11e7-a5d5-005056962143" type="595bef28-29f1-11e4-9aef-005056960017" name="Специалитет" alias="stage.specialist" card_number="17Ц002" start="2017-09-01" end="2024-06-30" target="1" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="85504286-fc2a-11e3-80cf-005056960017" name="По квоте приёма лиц, имеющих особое право" shortname="особая квота" alias="enrollment.special-quota"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="9ea6e6ba-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="1005036165" specialization_uuid="e328a0b8-4c4c-11e7-8ac0-005056960017" qualification_code="65" multiplicity="first" studyform="fulltime" course="2" abbr="ИУ8Ц-31" index="1" semester="3" term_in_year="1" diplom="0" students_budget="4" students_pay="0" students_real="4" students_pay_russian="0" students_pay_foreign="0" students_budget_real="4" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="7bb3ac18-4c4f-11e7-b255-005056960017" next_id="7bb3b8de-4c4f-11e7-8982-005056960017" prev_id="7bb39fb6-4c4f-11e7-95bb-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="7bb37130-4c4f-11e7-b6fe-005056960017" education_start_date="2017-09-01" semester_shift="0" planned_end_date="2024-06-30">
+            <speciality full_code="1005036165" full_code_formatted="10.05.03_61" speciality_code_formatted="10.05.03" specialization_uuid="e328a0b8-4c4c-11e7-8ac0-005056960017" uuid="e328a0b8-4c4c-11e7-8ac0-005056960017" specialization_code="61" specialization_title="Анализ безопасности информационных систем (адаптационный план)" specialization_period="6 years 10 mons" speciality_period="6 years 10 mons" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="c4121dd4-a218-11e4-9f07-005056960017" qualification_code="65" qualification_title="Специалист по защите информации" speciality_uuid="d6cad654-e743-11e3-8047-024716c10819" speciality_code="03" speciality_title="Информационная безопасность автоматизированных систем" speciality_priority="0" direction_uuid="d57fb3be-e743-11e3-a60d-024716c10819" direction_code="05" direction_title="Специалитет" direction_cost_group="2" ugs_uuid="d57f67d8-e743-11e3-9daa-024716c10819" ugs_code="10" ugs_title="Информационная безопасность" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="e328a0b8-4c4c-11e7-8ac0-005056960017"/>
+          </group>
+          <speciality id="e328a0b8-4c4c-11e7-8ac0-005056960017" sindex="1005036165" name="Информационная безопасность автоматизированных систем"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2017-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants>
+            <grant id="d5716958-963a-11e8-af04-005056960017" alias="grant.gov-social-high-freshmen-disease" name="Повышенная государственная социальная стипендия для студентов 1 и 2 курсов из числа детей-сирот и детей, оставшихся без попечения родителей, детей-инвалидов, инвалидов I и II групп, инвалидов с детства, лиц, подвергшихся радиации вследствие катастрофы на Чернобыльской АЭС и иных радиационных катастроф, ветеранов боевых действий, имеющим оценки успеваемости «хорошо» и «отлично»" type="e351a556-86c2-11e3-8096-005056960017" start="2018-07-01" end="2019-01-31"/>
+            <grant id="b8e9feda-89c9-11e8-9299-005056960017" alias="grant.gov-academic-excellent" name="Государственная академическая стипендия студентам, обучающимся на «отлично»" type="809f6876-d59d-11dc-b524-003048351d16" start="2018-07-01" end="2019-01-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="41939c5c-6c0d-11e4-8e33-5f079ee26acb" fio="Данилова Ксения Федоровна" lastname="Данилова" firstname="Ксения" middlename="Федоровна" birthdate="1996-01-14">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="685e5538-d499-11dc-a344-003048351d16" name="Не проживает" shortname="не проживает" alias="dormitory.false"/>
+      <gender id="db7cd564-d596-11dc-b2f1-003048351d16" name="Женский" alias="gender.female"/>
+      <stages>
+        <stage id="1fe4b096-fc50-11e3-9c9e-005056962143" prev_uuid="1fe4b096-fc50-11e3-9c9e-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="14Ц004" start="2014-09-01" end="2019-08-31" target="0" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="1dec90f0-35ca-11df-8128-003048c6b34e" name="Общий конкурс" shortname="общий конкурс" alias="enrollment.general"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="66cee394-ae52-11e0-8388-003048c6b34e" grouptype="student" full_code="0903016262" specialization_uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="5" abbr="ИУ5Ц-92Б" index="2" semester="9" term_in_year="1" diplom="1" students_budget="4" students_pay="0" students_real="4" students_pay_russian="0" students_pay_foreign="0" students_budget_real="4" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="5ad841c2-4ce8-11e7-bc3a-005056960017" next_id="5ad84dfc-4ce8-11e7-9535-005056960017" prev_id="5ad83574-4ce8-11e7-9a7f-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="5ad7bf90-4ce8-11e7-9e26-005056960017" education_start_date="2014-09-01" semester_shift="0" planned_end_date="2019-08-31">
+            <speciality full_code="0903016262" full_code_formatted="09.03.01_62" speciality_code_formatted="09.03.01" specialization_uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" uuid="ec10ea86-4c4d-11e7-b6ee-005056960017" specialization_code="62" specialization_title="Системы обработки информации и управления (адаптационный план)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d4e57d8a-e743-11e3-9439-024716c10819" speciality_code="01" speciality_title="Информатика и вычислительная техника" speciality_priority="0" direction_uuid="d4e50382-e743-11e3-a959-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d4e4b210-e743-11e3-988d-024716c10819" ugs_code="09" ugs_title="Информатика и вычислительная техника" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="ec10ea86-4c4d-11e7-b6ee-005056960017"/>
+          </group>
+          <speciality id="ec10ea86-4c4d-11e7-b6ee-005056960017" sindex="0903016262" name="Информатика и вычислительная техника"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2014-09-25" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions>
+            <subdivision id="a7b3bb3c-0f9d-11e1-8c0d-003048dc3bec" alias="subdivision.guimc" name="Головной учебно-исследовательский и методический центр" shortname="ГУИМЦ"/>
+          </subdivisions>
+          <grants>
+            <grant id="b805ccec-89c9-11e8-b152-005056960017" alias="grant.gov-academic-high.sport.first-cat" name="Повышенная государственная академическая стипендия за достижения в спортивной деятельности 1 категории" type="f0cf7e2d-3b8c-11e1-a486-003048dc3bec" start="2018-07-01" end="2019-01-31"/>
+            <grant id="c8acb826-e4ab-11e7-80bf-005056960017" alias="grant.gov-social-elders-diseased" name="Государственная социальная стипендия для студентов 3 и 4 курсов бакалавриата, 3-6 курсов специалитета, 1 и 2 курсов магистратуры из числа детей-сирот и детей, оставшихся без попечения родителей, детей-инвалидов, инвалидов I и II групп, инвалидов с детства, лиц, подвергшихся радиации вследствие катастрофы на Чернобыльской АЭС и иных радиационных катастроф, ветеранов боевых действий" type="bc8d3fe0-288c-11e0-8bca-003048c6b34e" start="2017-12-01" end="2019-08-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+    <person uuid="ac4db214-7b61-11e8-9fff-005056962144" fio="Денисов Карл Вениаминович" lastname="Денисов" firstname="Карл" middlename="Вениаминович" birthdate="2001-05-23">
+      <citizenship id="a115db60-d635-11dc-bb0c-003048351d16" shortname="Россия" name="Гражданин РФ" alias="citizenship.russian"/>
+      <country code="643" shortname="Россия"/>
+      <dormitory id="6a888220-d499-11dc-9c46-003048351d16" name="Проживает постоянно" shortname="проживает постоянно" alias="dormitory.true"/>
+      <gender id="d0475c5a-d596-11dc-ae45-003048351d16" name="Мужской" alias="gender.male"/>
+      <stages>
+        <stage id="e6aa183a-8c05-11e8-969b-005056962143" prev_uuid="e6aa183a-8c05-11e8-969b-005056962143" type="4a0135b0-29f1-11e4-9813-005056960017" name="Бакалавриат" alias="stage.bachelor" card_number="18Ц002" start="2018-09-01" end="2023-08-31" target="1" permission="1">
+          <multiplicity id="cae01048-29f1-11e4-a155-005056960017" name="Первое образование" shortname="1-е обр." alias="multiplicity.first"/>
+          <enrollment id="85504286-fc2a-11e3-80cf-005056960017" name="По квоте приёма лиц, имеющих особое право" shortname="особая квота" alias="enrollment.special-quota"/>
+          <inplan id="897cfc7e-2716-11e1-a486-003048dc3bec" name="Да" shortname="Да" alias="inplan.yes"/>
+          <studyform id="3376695d-0f8a-11e1-8c0d-003048dc3bec" name="Очная" shortname="очная" alias="studyform.fulltime"/>
+          <studytype id="14179986-d597-11dc-85d7-003048351d16" name="Бюджетная" shortname="бюджетная" alias="studytype.budget"/>
+          <group node_uid="9ee74fa8-7393-11e7-82e1-005056960017" grouptype="student" full_code="2703049162" specialization_uuid="79cc886a-96f6-11e7-885f-005056960017" qualification_code="62" multiplicity="first" studyform="fulltime" course="1" abbr="ИУ1Ц-12Б" index="2" semester="1" term_in_year="1" diplom="0" students_budget="1" students_pay="0" students_real="1" students_pay_russian="0" students_pay_foreign="0" students_budget_real="1" students_pay_real="0" students_pay_real_russian="0" students_pay_real_foreign="0" id="8e386ba4-3d75-11e8-b598-005056960017" next_id="8e386366-3d75-11e8-8fb7-005056960017" prev_id="8e386ba4-3d75-11e8-b598-005056960017" up_id="" down_id="" year="2018" group_head_uuid="" group_head="" curator_uuid="" curator="" nabor_uuid="8e3862f8-3d75-11e8-b415-005056960017" education_start_date="2018-09-01" semester_shift="0" planned_end_date="2023-08-31">
+            <speciality full_code="2703049162" full_code_formatted="27.03.04_91" speciality_code_formatted="27.03.04" specialization_uuid="79cc886a-96f6-11e7-885f-005056960017" uuid="79cc886a-96f6-11e7-885f-005056960017" specialization_code="91" specialization_title="Управление и информатика в технических системах (адаптационный план №2)" specialization_period="5 years" speciality_period="5 years" specialization_studyform_uuid="3376695d-0f8a-11e1-8c0d-003048dc3bec" specialization_base_specialization_uuid="" qualification_uuid="5859013e-e73d-11e3-aa15-024716c10819" qualification_code="62" qualification_title="Бакалавр" speciality_uuid="d8236df4-e743-11e3-800e-024716c10819" speciality_code="04" speciality_title="Управление в технических системах" speciality_priority="0" direction_uuid="d546ae8e-e743-11e3-b0de-024716c10819" direction_code="03" direction_title="Бакалавриат" direction_cost_group="2" ugs_uuid="d5465e8e-e743-11e3-a4c7-024716c10819" ugs_code="27" ugs_title="Управление в технических системах" generation_uuid="4ffca1b8-e1b5-11e3-966e-024716c10819" generation_title="Поколение 3+" generation_next="" generation_begin="2011-09-01" generation_end="" generation_spectype="" generation_specformat="{ugs}.{direction}.{speciality}_{specialization}" id="79cc886a-96f6-11e7-885f-005056960017"/>
+          </group>
+          <speciality id="79cc886a-96f6-11e7-885f-005056960017" sindex="2703049162" name="Управление в технических системах"/>
+          <state id="e8d8a7d8-d596-11dc-9609-003048351d16" alias="state.study" name="Обучается" start="2018-09-01" end=""/>
+          <military id="24435d7c-d498-11dc-a338-003048351d16" alias="military.none" name="Не обучается"/>
+          <subdivisions/>
+          <grants>
+            <grant id="35e6f8ae-b7f4-11e8-994f-005056960017" alias="grant.gov-academic-first" name="Государственная академическая стипендия для студентов 1 курса 1 семестра" type="9d329e36-d59d-11dc-82fc-003048351d16" start="2018-09-01" end="2019-01-31"/>
+          </grants>
+          <agreements/>
+        </stage>
+      </stages>
+    </person>
+  </persons>
+</contingent>

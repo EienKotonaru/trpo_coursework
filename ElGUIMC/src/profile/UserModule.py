@@ -1,14 +1,9 @@
 from src.utils.singleton import Singleton
-from src.user.UserMapper import UserMapper
-from Crypto.Cipher import DES
-import hashlib
-from src.user.UserSet import UserSet
-import binascii
-from flask import url_for, request, redirect
+from src.profile.ProfileMapper import ProfileMapper
+from src.profile.ProfileSet import ProfileSet
 
-user_set = UserSet()
-user_mapper = UserMapper()
-DES_KEY = b"eguimc19"
+profile_set = ProfileSet()
+profile_mapper = ProfileMapper()
 
 
 class UserModule(metaclass=Singleton):
@@ -16,7 +11,7 @@ class UserModule(metaclass=Singleton):
         pass
 
     # Проверка на основе сведений о предметной области (бизнес-логика)
-    def register(self, email, password):
+    """def register(self, email, password):
         sha = hashlib.sha256(password.encode('utf8')).hexdigest()
         print(sha)
 
@@ -45,7 +40,7 @@ class UserModule(metaclass=Singleton):
         user = user_set.find_by_id(user_id)
         return user.role_id
 
-        """criteria = user_set.find(email, password)
+        criteria = user_set.find(email, password)
         if not criteria:
             criteria = Criteria(name, weight, measure, group_id)
             criteria_mapper.insert(criteria)
