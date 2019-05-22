@@ -18,8 +18,8 @@ class StudentMapper(metaclass=Singleton):
     def insert(self, student_obj):
         cursor = self.db.cursor()
         cursor.execute("INSERT INTO students (last_name, first_name, birth_date, gender, uuid, speciality, citizenship, " +
-                       "group, enrollment, studying_type, grade_card, phone, middle_name, dormitory, address) " +
-                       "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,) RETURNING id;",
+                       "groupname, enrollment, studying_type, grade_card, middle_name, dormitory, phone, address) " +
+                       "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id;",
                        (student_obj.last_name,
                         student_obj.first_name,
                         student_obj.birth_date,
@@ -31,9 +31,9 @@ class StudentMapper(metaclass=Singleton):
                         student_obj.enrollment,
                         student_obj.studying_type,
                         student_obj.grade_card,
-                        student_obj.phone,
                         student_obj.middle_name,
                         student_obj.dormitory,
+                        student_obj.phone,
                         student_obj.address))
         self.db.commit()
         student_obj.set_id(cursor.fetchone()[0])
@@ -67,9 +67,9 @@ class StudentMapper(metaclass=Singleton):
                                       student_entry[cols_order.index("enrollment")],
                                       student_entry[cols_order.index("studying_type")],
                                       student_entry[cols_order.index("grade_card")],
-                                      student_entry[cols_order.index("phone")],
                                       student_entry[cols_order.index("middle_name")],
                                       student_entry[cols_order.index("dormitory")],
+                                      student_entry[cols_order.index("phone")],
                                       student_entry[cols_order.index("address")],
                                       )
                 student_set.add_student(student_obj)

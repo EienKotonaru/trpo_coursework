@@ -8,10 +8,12 @@ from src.role.RoleModule import RoleModule
 from src.user.UserModule import UserModule
 from src.utils.decorators import login_required
 from src.value.ValueModule import ValueModule
+from src.student.StudentModule import StudentModule
 
 
 user_module = UserModule()
 group_module = GroupModule()
+student_module = StudentModule()
 criteria_module = CriteriaModule()
 value_module = ValueModule()
 role_module = RoleModule()
@@ -116,5 +118,5 @@ class ProfileLoader(MethodView):
     @login_required
     def post(self):
         xml = request.files.get('xml')
-        test = xml.read()
+        student_module.import_from_xml(xml.read())
         return render_template('menu.html') #temp
