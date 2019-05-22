@@ -14,7 +14,7 @@ class RoleModule(metaclass=Singleton):
     def __init__(self):
         pass
 
-    def check_permission(self, id, page_url):
+    def check_permission(self, id):
         role_mapper.load_all()
         role = role_set.find_by_id(id)
         url_name = request.url_rule.endpoint
@@ -22,6 +22,13 @@ class RoleModule(metaclass=Singleton):
         if url_name in role.pages:
             return True
         return False
+
+    def get_role_id(self, role_name):
+        if role_name:
+            role_mapper.load_all()
+            role = role_set.find_by_name(role_name)
+            return role.id
+        return None
 
         """criteria = user_set.find(email, password)
         if not criteria:

@@ -8,6 +8,9 @@ class RoleSet(metaclass=Singleton):
     def find_by_id(self, id):
         return next((obj for obj in self.roles if int(obj.id) == int(id)), None)
 
+    def find_by_name(self, name):
+        return next((obj for obj in self.roles if obj.name == name), None)
+
     def find_by_all_fields(self, name, pages):
         return next((obj for obj in self.roles if obj.name == name
                      and obj.pages == pages), None)

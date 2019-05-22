@@ -40,12 +40,12 @@ class UserMapper(metaclass=Singleton):
         for user_entry in user_entries:
             user_obj = user_set.find_by_all_fields(user_entry[cols_order.index("email")],
                                                            user_entry[cols_order.index("password")],
-                                                           user_entry[cols_order.index("uuid")],
+                                                           user_entry[cols_order.index("profile_id")],
                                                            user_entry[cols_order.index("role_id")],)
             if not user_obj:
                 user_obj = User(user_entry[cols_order.index("email")],
                                         user_entry[cols_order.index("password")],
-                                        user_entry[cols_order.index("uuid")],
+                                        user_entry[cols_order.index("profile_id")],
                                         user_entry[cols_order.index("role_id")],
                                         user_entry[cols_order.index("id")])
                 user_set.add_user(user_obj)

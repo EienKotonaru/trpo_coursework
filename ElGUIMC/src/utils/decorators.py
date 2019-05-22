@@ -14,8 +14,7 @@ def login_required(f):
         role_id = user_module.get_user_role()
         if not role_id:
             return redirect(url_for('auth_user'))
-        url = request.url_rule.rule
-        has_permission = role_module.check_permission(role_id, url)
+        has_permission = role_module.check_permission(role_id)
         if not has_permission:
             return redirect(url_for('auth_user'))
         return f(*args, **kwargs)

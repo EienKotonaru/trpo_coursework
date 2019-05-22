@@ -6,10 +6,16 @@ profile_set = ProfileSet()
 profile_mapper = ProfileMapper()
 
 
-class UserModule(metaclass=Singleton):
+class ProfileModule(metaclass=Singleton):
     def __init__(self):
         pass
 
+    def get_link_info(self, uuid):
+        if uuid:
+            profile_mapper.load_all()
+            profile = profile_set.find_by_uuid(uuid)
+            return profile.id, profile.relname
+        return None, None
     # Проверка на основе сведений о предметной области (бизнес-логика)
     """def register(self, email, password):
         sha = hashlib.sha256(password.encode('utf8')).hexdigest()

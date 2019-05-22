@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, email, password, role_id, profile_id, id=0):
+    def __init__(self, email, password, profile_id, role_id, id=0):
         self.id = id
         self.email = email
         self.password = password

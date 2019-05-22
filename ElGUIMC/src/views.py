@@ -9,6 +9,7 @@ from src.user.UserModule import UserModule
 from src.utils.decorators import login_required
 from src.value.ValueModule import ValueModule
 from src.student.StudentModule import StudentModule
+from src.profile.ProfileModule import ProfileModule
 
 
 user_module = UserModule()
@@ -17,6 +18,7 @@ student_module = StudentModule()
 criteria_module = CriteriaModule()
 value_module = ValueModule()
 role_module = RoleModule()
+profile_module = ProfileModule()
 DES_KEY = b"eguimc19"
 
 
@@ -31,8 +33,10 @@ class Registration(MethodView):
         return render_template('registration.html')
 
     def post(self):
-        user_module.register(request.form['email'], request.form['password'],
-                             request.form['username_ais'], request.form['password_ais'])
+        uuid = user_module.ldap_login(request.form['username_ais'], request.form['password_ais'])
+        profile_id, role_name = profile_module.get_link_info(uuid)
+        role_id = role_module.get_role_id(role_name)
+        user_module.register(request.form['email'], request.form['password'], profile_id, role_id)
         return render_template('menu.html') #temp
 
 

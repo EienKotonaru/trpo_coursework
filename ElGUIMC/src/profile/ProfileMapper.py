@@ -32,7 +32,7 @@ class ProfileMapper(metaclass=Singleton):
     # Проверка, загружены ли все записи из БД (не относится к бизнес-логике)
     def load_all(self):
         cursor = self.db.cursor()
-        cursor.execute("SELECT * FROM profiles;")
+        cursor.execute("SELECT p.relname, c.* FROM profiles c, pg_class p WHERE c.tableoid = p.oid;")
         profile_entries = cursor.fetchall()
         cols_order = [col[0] for col in cursor.description]
 
@@ -45,7 +45,9 @@ class ProfileMapper(metaclass=Singleton):
                                       profile_entry[cols_order.index("gender")],
                                       profile_entry[cols_order.index("uuid")],
                                       profile_entry[cols_order.index("phone")],
-                                      profile_entry[cols_order.index("middle_name")]
+                                      profile_entry[cols_order.index("middle_name")],
+                                      profile_entry[cols_order.index("relname")],
+                                      profile_entry[cols_order.index("id")]
                                       )
                 profile_set.add_profile(profile_obj)
         cursor.close()
