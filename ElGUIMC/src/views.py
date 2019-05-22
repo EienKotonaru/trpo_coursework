@@ -31,7 +31,8 @@ class Registration(MethodView):
         return render_template('registration.html')
 
     def post(self):
-        user_module.register(request.form['email'], request.form['password'])
+        user_module.register(request.form['email'], request.form['password'],
+                             request.form['username_ais'], request.form['password_ais'])
         return render_template('menu.html') #temp
 
 

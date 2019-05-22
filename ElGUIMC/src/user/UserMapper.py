@@ -15,14 +15,15 @@ class UserMapper(metaclass=Singleton):
             dbname="trpo_course"
         )
 
-    """def insert(self, user_obj):
+    def insert(self, user_obj):
         cursor = self.db.cursor()
-        cursor.execute("INSERT INTO users (email, password) VALUES (%s, %s) RETURNING id;", (user_obj.name, user_obj.weight, user_obj.measure, user_obj.group_id))
+        cursor.execute("INSERT INTO users (email, password, role_id, profile_id) VALUES (%s, %s, %s, %s) RETURNING id;",
+                       (user_obj.email, user_obj.password, user_obj.role_id, user_obj.profile_id))
         self.db.commit()
         user_obj.set_id(cursor.fetchone()[0])
         cursor.close()
 
-    def delete(self, user_obj):
+    """def delete(self, user_obj):
         cursor = self.db.cursor()
         cursor.execute("DELETE FROM Criterias WHERE id=%s;", (user_obj.id,))
         self.db.commit()

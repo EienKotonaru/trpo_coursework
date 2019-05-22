@@ -1,3 +1,6 @@
+import csv
+
+from src.user.User import User
 from src.utils.singleton import Singleton
 from src.user.UserMapper import UserMapper
 from Crypto.Cipher import DES
@@ -16,9 +19,22 @@ class UserModule(metaclass=Singleton):
         pass
 
     # Проверка на основе сведений о предметной области (бизнес-логика)
-    def register(self, email, password):
-        sha = hashlib.sha256(password.encode('utf8')).hexdigest()
-        print(sha)
+    def register(self, email, password, username_ais, password_ais):
+        with open("ldap.csv", 'r') as file:
+            reader = csv.reader(file)
+            uuid = None
+            for row in reader:
+                if row[0] == username_ais and row[1] == password_ais:
+                    uuid = row[2]
+                    break
+
+        if uuid:
+            user_mapper.load_all()
+            hashed_password = hashlib.sha256(password.encode('utf8')).hexdigest()
+            user = user_set.find_by_all_fields(email, hashed_password, uuid, 2) #TODO
+            if not user:
+                user = User(email, hashed_password, 1, 1) #TODO
+                user_mapper.insert(user)
 
     def login(self, email, password):
         user_mapper.load_all()
@@ -31,7 +47,7 @@ class UserModule(metaclass=Singleton):
             hex_code = binascii.hexlify(encrypted_id)
             return hex_code.decode("utf-8")
         else:
-            return "errror"
+            return "error"
 
     def get_user_role(self):
         hex_code = request.cookies.get('userID')
@@ -44,6 +60,8 @@ class UserModule(metaclass=Singleton):
         user_mapper.load_all()
         user = user_set.find_by_id(user_id)
         return user.role_id
+
+
 
         """criteria = user_set.find(email, password)
         if not criteria:
