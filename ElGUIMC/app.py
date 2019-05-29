@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 
 from src.views import CreateGroup, GroupsList, Menu, CreateCriteria, CreateValues, Registration, Login, Logout, \
-    ProfileLoader, ShowRoles, ChangePermissions, StudentSettings, StudentsList, AssignCriterias, CreateTsr
+    ProfileLoader, ShowRoles, ChangePermissions, StudentSettings, StudentsList, AssignCriterias, CreateTsr, \
+    CreateRequest, ShowRequests, RemoveRequest
 
 
 class Application:
@@ -31,3 +32,6 @@ class Application:
                                      .as_view('settings'))
             self.server.add_url_rule('/assign_criterias/<student_id>', view_func=AssignCriterias
                                      .as_view('assign_criterias'))
+            self.server.add_url_rule('/create_request', view_func=CreateRequest.as_view('create_request'))
+            self.server.add_url_rule('/remove_request/<request_id>', view_func=RemoveRequest.as_view('remove_request'))
+            self.server.add_url_rule('/student_requests', view_func=ShowRequests.as_view('student_requests'))

@@ -16,6 +16,7 @@ from src.student.StudentModule import StudentModule
 from src.profile.ProfileModule import ProfileModule
 from src.employee.EmployeeModule import EmployeeModule
 from src.tsr.TsrModule import TsrModule
+from src.request.RequestModule import RequestModule
 
 
 user_module = UserModule()
@@ -27,6 +28,8 @@ role_module = RoleModule()
 profile_module = ProfileModule()
 employee_module = EmployeeModule()
 tsr_module = TsrModule()
+request_module = RequestModule()
+
 DES_KEY = b"eguimc19"
 
 
@@ -117,7 +120,6 @@ class CreateValues(MethodView):
 
     @login_required
     def post(self, group_id):
-        test=request.form
         value_module.create_values_for_criterias(request.form.getlist('value'), request.form.getlist('criteria_id'))
         return redirect('/add_values/' + str(group_id))
 
@@ -216,3 +218,28 @@ class CreateTsr(MethodView):
         elif "delete" in request.form:
             tsr_module.remove_tsr(request.form.get('id'))
         return redirect('/add_tsr')
+
+
+class CreateRequest(MethodView):
+    @login_required
+    def get(self):
+        request_module.create_request(None, 'В рассмотрении', 8, problem="yareyare", tsr_id=1)
+        return render_template('menu.html', user_group=get_role_name())
+
+
+class ShowRequests(MethodView):
+    @login_required
+    def get(self):
+        user = user_module.get_user()
+        student = student_module.get_single_student(user.profile_id)
+        requests = request_module.get_student_requests(student.id)
+        tsrs = tsr_module.get_tsrs_list()
+
+        return render_template('show_requests.html', requests=requests, tsrs=tsrs, user_group=get_role_name())
+
+
+class RemoveRequest(MethodView):
+    @login_required
+    def post(self, request_id):
+        request_module.remove_request(request_id)
+        return redirect('/student_requests')
