@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Изменить профиль{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="page_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">{{ student.last_name }} {{ student.first_name }} {{ student.middle_name}}</h4>
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        <form class="page"  action="/settings" method="POST">
+            <div class="row">
+                <p class="p_id" style="display: none"></p>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" data-length="30" id="phone" maxlength="30" value="{{ student.phone }}" name="phone" class="validate" required aria-required="true">
+                    <label for="phone">Телефон</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                </div>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" data-length="100" id="address" maxlength="100" value="{{ student.address }} " name="address" class="validate" required aria-required="true">
+                    <label for="address">Адрес</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="col12 s6 m2 l2 center-align">
+                    <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom save_page">Сохранить</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

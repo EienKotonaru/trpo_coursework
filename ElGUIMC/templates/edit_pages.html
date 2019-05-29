@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Изменить страницы{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="page_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Изменить список доступных страниц для группы пользователей:
+            {% if role.name == 'students' %}
+            студенты
+            {% elif role.name == 'employees' %}
+            сотрудники
+            {% endif %}</h4>
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        <form class="page"  action="/change_permissions/{{ role.id }}" method="POST">
+            <div class="row">
+                <p class="p_id" style="display: none"></p>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" data-length="30" id="name" maxlength="30" name="name" class="validate" required aria-required="true">
+                    <label for="name">Название страницы</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="col12 s6 m2 l2 center-align">
+                    <button type="submit" name="new" class="blue darken-1 waves-effect btn-large btn-custom save_page"><i class="material-icons">save</i></button>
+                </div>
+            </div>
+        </form>
+
+        {% for page in role.pages %}
+            <form class="page" action="/change_permissions/{{ role.id }}" method="POST" >
+            <div class="row">
+                <p class="p_id" style="display: none">{{ page.id }}</p>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" value="{{ loop.index0 }}" name="index" style="display: none">
+                    <input type="text" value="{{ page }}" data-length="30" id="name" maxlength="30" name="name" class="validate" required aria-required="true">
+                    <label for="name">Название страницы</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                </div>
+                <div class="col12 s6 m2 l2 center-align">
+                    <button type="submit" name="save" class="blue darken-1 waves-effect btn-large btn-custom save_page"><i class="material-icons">save</i></button>
+                    <button type="submit" name="delete" class="blue darken-1 waves-effect btn-large btn-custom delete_page"><i class="material-icons">delete</i></button>
+                </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

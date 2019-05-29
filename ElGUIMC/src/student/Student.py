@@ -5,7 +5,7 @@ class Student(Profile):
     def __init__(self, last_name, first_name, birth_date, gender, uuid,
                  speciality, citizenship, group, enrollment, studying_type, grade_card,
                  middle_name=None, dormitory=False, phone=None, address=None, id=0):
-        super().__init__(last_name, first_name, birth_date, gender, uuid, phone, middle_name, id)
+        super().__init__(last_name, first_name, birth_date, gender, uuid, phone, middle_name, 'students', id)
         self.speciality = speciality
         self.citizenship = citizenship
         self.group = group

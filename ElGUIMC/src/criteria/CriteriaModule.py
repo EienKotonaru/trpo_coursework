@@ -11,14 +11,21 @@ class CriteriaModule(metaclass=Singleton):
     def __init__(self):
         pass
 
-    # Проверка на основе сведений о предметной области (бизнес-логика)
-    def check_and_create(self, name, weight, measure, group_id):
-        criteria = criteria_set.find(name, measure)
+    def check_and_create(self, name, measure, group_id):
+        criteria_mapper.load_all()
+        criteria = criteria_set.find(name)
         if not criteria:
-            criteria = Criteria(name, weight, measure, group_id)
+            criteria = Criteria(name, measure, group_id)
             criteria_mapper.insert(criteria)
             criteria_set.add_criteria(criteria)
             return criteria.id
+        else:
+            criteria.measure = measure
+            criteria_mapper.update(criteria)
+
+    def get_criterias_list(self):
+        criteria_mapper.load_all()
+        return criteria_set.criterias
 
     def get_criterias_by_group(self, group_id):
         criteria_mapper.load_all()

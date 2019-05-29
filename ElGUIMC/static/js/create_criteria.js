@@ -44,7 +44,6 @@ function add_button_saver(button_selector) {
             data: {
                 type: "save",
                 name: current_row.find("input[name=name]").val(),
-                weight: current_row.find("input[name=weight]").val(),
                 measure: current_row.find("input[name=measure]").val(),
                 csrfmiddlewaretoken: current_row.parent().find("input[name=csrfmiddlewaretoken]").val()
             },

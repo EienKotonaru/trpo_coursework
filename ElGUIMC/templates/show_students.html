@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Выбрать студента{% endblock %}
+
+
+{%block custom_css%}
+{%endblock %}
+
+
+{% block content %}
+
+    <div class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Выберите студента</h4>
+
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        {% for student in students %}
+            {% include 'include_student.html' with context %}
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

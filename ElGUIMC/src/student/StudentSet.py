@@ -11,6 +11,9 @@ class StudentSet(metaclass=Singleton):
     def find_by_id(self, id):
         return next((obj for obj in self.students if int(obj.id) == int(id)), None)
 
+    def find_by_user_id(self, id):
+        return next((obj for obj in self.students if int(obj.id) == int(id)), None)
+
     def add_student(self, student_obj):
         self.students.append(student_obj)
 

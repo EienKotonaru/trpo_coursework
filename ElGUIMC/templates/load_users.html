@@ -21,13 +21,27 @@
                     </div>
                 </div>
                 <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
-                    <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_students">Добавить студентов</button>
+                    <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" name="xml" id="add_students">Добавить студентов</button>
                 </div>
             </form>
 
         </div>
+
         <div class="col s12 m12 l12 center-align" style="margin-bottom: 50px">
-            <a href="/groups"><button class="blue darken-1 waves-effect btn-large btn-custom" style="width: 50%;">Управление критериями</button></a>
+            <form action="/load_profiles" method="POST" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                    <div class="blue darken-1 waves-effect btn-large btn-custom">
+                        <span>Файл .json</span>
+                        <input type="file" name="json">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                    <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" name="json" id="add_employees">Добавить сотрудников</button>
+                </div>
+            </form>
         </div>
     </div>
 

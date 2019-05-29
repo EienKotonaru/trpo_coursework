@@ -21,9 +21,23 @@
             <div class="nav-wrapper">
                 <a href="/" class="brand-logo left"><img style="height: 55px; padding-left: 64px; margin: 4px;" src="{{ url_for('static', filename='images/logo.svg') }}"/></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/create_group">Создать группу критериев</a></li>
-                    <li><a href="/groups">Управление критериями</a></li>
-                    <li><a href="/logout">Выход</a></li>
+                    {% if user_group == "admin" %}
+                        <li><a href="/create_group">Создать группу критериев</a></li>
+                        <li><a href="/groups">Управление критериями</a></li>
+                    {% endif %}
+                    {% if user_group == "employees" %}
+                        <li><a href="/all_students">Реабилитационный потенциал</a></li>
+                    {% endif %}
+                    {% if user_group == "students" %}
+                        <li><a href="/settings">Редактировать профиль</a></li>
+                        <li><a href="/add_tsr">Добавить ТСР</a></li>
+                    {% endif %}
+                    {% if request.cookies.get('userID') %}
+                        <li><a href="/logout">Выход</a></li>
+                    {% else %}
+                        <li><a href="/login">Вход</a></li>
+                        <li><a href="/registration">Регистрация</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

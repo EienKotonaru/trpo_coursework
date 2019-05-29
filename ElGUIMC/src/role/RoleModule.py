@@ -30,22 +30,28 @@ class RoleModule(metaclass=Singleton):
             return role.id
         return None
 
-        """criteria = user_set.find(email, password)
-        if not criteria:
-            criteria = Criteria(name, weight, measure, group_id)
-            criteria_mapper.insert(criteria)
-            criteria_set.add_criteria(criteria)
-            return criteria.id
+    def get_single_role(self, role_id):
+        role_mapper.load_all()
+        return role_set.find_by_id(role_id)
 
-    def get_criterias_by_group(self, group_id):
-        criteria_mapper.load_all()
-        criterias_by_group = criteria_set.criterias
-        criterias_by_group = [obj for obj in criterias_by_group if int(obj.group_id) == int(group_id)]
-        return criterias_by_group
+    def get_roles_list(self):
+        role_mapper.load_all()
+        return role_set.roles
 
-    def remove_criteria(self, criteria_id):
-        criteria_mapper.load_all()
-        criteria_to_delete = criteria_set.find_by_id(criteria_id)
-        if criteria_to_delete:
-            criteria_mapper.delete(criteria_to_delete)
-            criteria_set.remove_criteria(criteria_to_delete)"""
+    def update_pages(self, role_id, page, index):
+        role = self.get_single_role(role_id)
+        role.pages[int(index)] = page
+        role_mapper.update(role)
+        return
+
+    def delete_page(self, role_id, index):
+        role = self.get_single_role(role_id)
+        del role.pages[int(index)]
+        role_mapper.update(role)
+        return
+
+    def add_page(self, role_id, page):
+        role = self.get_single_role(role_id)
+        role.pages.append(page)
+        role_mapper.update(role)
+        return

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
 from src.views import CreateGroup, GroupsList, Menu, CreateCriteria, CreateValues, Registration, Login, Logout, \
-    ProfileLoader
+    ProfileLoader, ShowRoles, ChangePermissions, StudentSettings, StudentsList, AssignCriterias, CreateTsr
 
 
 class Application:
@@ -9,6 +9,7 @@ class Application:
         self.port = port
         self.server = Flask(__name__, static_url_path='/static')
         self.server.url_map.strict_slashes = False
+        self.create_app()
 
     def create_app(self) -> None:
         with self.server.app_context():
@@ -20,4 +21,13 @@ class Application:
             self.server.add_url_rule('/create_group', view_func=CreateGroup.as_view('new_group'))
             self.server.add_url_rule('/groups', view_func=GroupsList.as_view('all_groups'))
             self.server.add_url_rule('/add_criteria/<group_id>', view_func=CreateCriteria.as_view('new_criteria'))
+            self.server.add_url_rule('/add_tsr', view_func=CreateTsr.as_view('new_tsr'))
             self.server.add_url_rule('/add_values/<group_id>', view_func=CreateValues.as_view('new_values'))
+            self.server.add_url_rule('/all_students', view_func=StudentsList.as_view('all_students'))
+            self.server.add_url_rule('/permissions', view_func=ShowRoles.as_view('permissions'))
+            self.server.add_url_rule('/change_permissions/<role_id>', view_func=ChangePermissions
+                                     .as_view('change_permissions'))
+            self.server.add_url_rule('/settings', view_func=StudentSettings
+                                     .as_view('settings'))
+            self.server.add_url_rule('/assign_criterias/<student_id>', view_func=AssignCriterias
+                                     .as_view('assign_criterias'))

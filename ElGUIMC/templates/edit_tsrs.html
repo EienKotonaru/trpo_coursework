@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}Управление ТСР{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Управление ТСР</h4>
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        {% for tsr in tsrs %}
+            <form class="page" action="/add_tsr" method="POST" style="border:2px solid #1e88e5; border-radius: 20px; margin-bottom: 20px">
+                <div class="row">
+                    <input type="text" name="id" style="display: none;" value="{{ tsr.id }}">
+                    <div class="input-field col s12 m6 l6 xl6">
+                        <input type="text" data-length="30" id="manufacturer" maxlength="30" value="{{ tsr.manufacturer }}" name="manufacturer" class="validate" required aria-required="true">
+                        <label for="manufacturer">Производитель</label>
+                        <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                    </div>
+                    <div class="input-field col s12 m6 l6 xl6">
+                        <input type="text" data-length="100" id="usage_since_year" maxlength="100" value="{{ tsr.usage_since_year }} " name="usage_since_year" class="validate" required aria-required="true">
+                        <label for="usage_since_year">Год начала использования</label>
+                        <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                    </div>
+                    <div class="input-field col s12 m12 l12 xl12">
+                        <input type="text" data-length="100" id="type" maxlength="100" value="{{ tsr.type }} " name="type" class="validate" required aria-required="true">
+                        <label for="type">Тип</label>
+                        <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                    </div>
+
+                    <div class="col12 s12 m12 l12 center-align">
+                        <button type="submit" name="save" class="blue darken-1 waves-effect btn-large btn-custom save_page">Сохранить</button>
+                        <button type="submit" name="delete" class="blue darken-1 waves-effect btn-large btn-custom save_page">Удалить</button>
+                    </div>
+                </div>
+            </form>
+        {% endfor %}
+
+        <form action="/add_tsr" method="POST" style="border:2px solid #1e88e5; border-radius: 20px; margin-bottom: 20px">
+            <div class="row">
+                <p class="p_id" style="display: none"></p>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" data-length="30" id="manufacturer" maxlength="30" name="manufacturer" class="validate" required aria-required="true">
+                    <label for="manufacturer">Производитель</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                </div>
+                <div class="input-field col s12 m6 l6 xl6">
+                    <input type="text" data-length="100" id="usage_since_year" maxlength="100" name="usage_since_year" class="validate" required aria-required="true">
+                    <label for="usage_since_year">Год начала использования</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                </div>
+                <div class="input-field col s12 m12 l12 xl12">
+                    <input type="text" data-length="100" id="type" maxlength="100" name="type" class="validate" required aria-required="true">
+                    <label for="type">Тип</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="col12 s12 m12 l12 center-align">
+                    <button type="submit" name="add" class="blue darken-1 waves-effect btn-large btn-custom save_page">Добавить</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}

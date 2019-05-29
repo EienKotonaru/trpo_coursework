@@ -5,12 +5,11 @@ class CriteriaSet(metaclass=Singleton):
     def __init__(self):
         self.criterias = []
 
-    def find(self, name, measure):
-        return next((obj for obj in self.criterias if obj.name == name and obj.measure == measure), None)
+    def find(self, name):
+        return next((obj for obj in self.criterias if obj.name == name), None)
 
-    def find_by_all_fields(self, name, weight, measure, group_id):
+    def find_by_all_fields(self, name, measure, group_id):
         return next((obj for obj in self.criterias if obj.name == name and
-                     int(obj.weight) == int(weight) and
                      obj.measure == measure and
                      int(obj.group_id) == int(group_id)), None)
 

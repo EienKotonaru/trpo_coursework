@@ -39,12 +39,11 @@ class StudentMapper(metaclass=Singleton):
         student_obj.set_id(cursor.fetchone()[0])
         cursor.close()
 
-    """def delete(self, user_obj):
+    def update(self, student_obj):
         cursor = self.db.cursor()
-        cursor.execute("DELETE FROM Criterias WHERE id=%s;", (user_obj.id,))
+        cursor.execute("UPDATE students SET phone=%s, address=%s WHERE id=%s;", (student_obj.phone, student_obj.address, student_obj.id))
         self.db.commit()
-        user_obj.id = cursor.lastrowid
-        cursor.close()"""
+        cursor.close()
 
     # Проверка, загружены ли все записи из БД (не относится к бизнес-логике)
     def load_all(self):
@@ -63,7 +62,7 @@ class StudentMapper(metaclass=Singleton):
                                       student_entry[cols_order.index("uuid")],
                                       student_entry[cols_order.index("speciality")],
                                       student_entry[cols_order.index("citizenship")],
-                                      student_entry[cols_order.index("group")],
+                                      student_entry[cols_order.index("groupname")],
                                       student_entry[cols_order.index("enrollment")],
                                       student_entry[cols_order.index("studying_type")],
                                       student_entry[cols_order.index("grade_card")],
@@ -71,6 +70,7 @@ class StudentMapper(metaclass=Singleton):
                                       student_entry[cols_order.index("dormitory")],
                                       student_entry[cols_order.index("phone")],
                                       student_entry[cols_order.index("address")],
+                                      student_entry[cols_order.index("id")]
                                       )
                 student_set.add_student(student_obj)
         cursor.close()

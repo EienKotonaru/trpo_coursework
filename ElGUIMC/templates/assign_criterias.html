@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Отслеживаемые критерии{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="page_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">{{ student.last_name }} {{ student.first_name }} {{ student.middle_name}}</h4>
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+        <p>Группа: {{ student.group }}</p>
+        <p>Специальность: {{ student.speciality }}</p>
+        <p>Гражданство: {{ student.citizenship }}</p>
+        <p>Дата зачисления: {{ student.enrollment }}</p>
+        <p>Форма обучения: {{ student.studying_type }}</p>
+        <p>Номер зачетной книжки: {{ student.grade_card }}</p>
+        {% if student.dormitory %}
+            <p>С предоставлением общежития</p>
+        {% else %}
+            <p>Без предоставления общежития</p>
+        {% endif %}
+        <form class="page" action="/assign_criterias/{{ student.id }}" method="POST" >
+        <h5>Критерии</h5>
+            {% for criteria in criterias %}
+
+                <div class="row">
+                    <p class="p_id">{{ criteria.name }}, {{ criteria.measure }}</p>
+                    <div class="input-field col s12 m2 l2 xl2">
+                        <p>
+                            <label>
+                                <input type="checkbox" />
+                                <span>Выбран?</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="input-field col s12 m5 l5 xl5">
+                        <input type="text" data-length="2" id="weight" maxlength="2" name="weight" class="validate" required aria-required="true">
+                        <label for="weight">Весовой коэффициент</label>
+                        <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                    </div>
+                </div>
+
+            {% endfor %}
+            <div class="col12 s6 m2 l2 center-align">
+                <button type="submit" name="save" class="blue darken-1 waves-effect btn-large btn-custom save_page">Сохранить</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+{%endblock%}
