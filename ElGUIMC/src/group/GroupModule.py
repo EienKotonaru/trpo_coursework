@@ -12,8 +12,8 @@ class GroupModule(metaclass=Singleton):
     def __init__(self):
         pass
 
-    # Проверка на основе сведений о предметной области (бизнес-логика)
     def check_and_create(self, name, description):
+        group_mapper.load_all()
         group = group_set.find(name, description)
         if not group:
             group = Group(name, description)

@@ -27,6 +27,10 @@ class TsrModule(metaclass=Singleton):
         tsr_mapper.load_all()
         return tsr_set.tsrs
 
+    def get_tsr_by_id(self, tsr_id):
+        tsr_mapper.load_all()
+        return next((obj for obj in tsr_set.tsrs if int(obj.id) == int(tsr_id)), None)
+
     def get_tsrs_by_student(self, student_id):
         tsr_mapper.load_all()
         tsrs_by_student = tsr_set.tsrs

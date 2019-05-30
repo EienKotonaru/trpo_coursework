@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Добавить заявку{% endblock %}
+
+
+{%block custom_css%}
+{%endblock%}
+
+
+{% block content %}
+
+    <div id="criteria_forms" class="container" style="margin-top: 32px">
+        <h4 class="center-align" style="margin-bottom: 32px">Добавить заявку</h4>
+
+        <div class="row">
+            <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="request_type">
+                    <option value="" disabled selected>Выберите тип заявки</option>
+                    <option value="1">Заказ справки</option>
+                    <option value="2">Обслуживание ТСР</option>
+                </select>
+                <label>Тип заявки</label>
+            </div>
+        </div>
+        <form id="criteria_template" action="/create_request" method="POST">
+            <div class="row">
+
+                <div class="input-field col s12 m12 l12 xl12">
+                     <input type="text" data-length="1" id="quantity" maxlength="1" name="quantity" class="validate" required aria-required="true" title="Используйте только цифры для заполнения данного поля" pattern="^[0-9]+$">
+                    <label for="quantity">Количество справок</label>
+                    <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только цифры." data-success="">Обязательное поле</span>
+                </div>
+
+                <div class="input-field col s12 m12 l12 xl12">
+                    <input type="text" data-length="30" id="purpose" maxlength="30" name="purpose" class="validate" required aria-required="true">
+                    <label for="purpose">Назначение</label>
+                    <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+                </div>
+            </div>
+            <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Создать заявку</button>
+            </div>
+        </form>
+
+        <form id="criteria_template" action="/create_request" method="POST">
+            <div class="row">
+
+                {% for tsr in tsrs %}
+                    <p>
+                        <label>
+                            <input name="tsr" type="radio" value="{{ tsr.id }}"/>
+                            <span>{{ tsr.type }} ({{ tsr.manufacturer }})</span>
+                        </label>
+                    </p>
+                {% endfor %}
+
+                <div class="input-field col s12 m12 l12 xl12">
+                    <input type="text" data-length="30" id="problem" maxlength="30" name="problem" class="validate" required aria-required="true">
+                    <label for="problem">Проблема</label>
+                    <span class="helper-text" data-error="Поле не заполнено." data-success="">Обязательное поле</span>
+                </div>
+            </div>
+            <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center">Создать заявку</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+{%block custom_js%}
+    <script src="{{ url_for('static', filename='js/materialize_init.js') }}"></script>
+{%endblock%}

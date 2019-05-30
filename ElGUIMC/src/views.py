@@ -223,8 +223,17 @@ class CreateTsr(MethodView):
 class CreateRequest(MethodView):
     @login_required
     def get(self):
-        request_module.create_request(None, 'В рассмотрении', 8, problem="yareyare", tsr_id=1)
-        return render_template('menu.html', user_group=get_role_name())
+        user = user_module.get_user()
+        student = student_module.get_single_student(user.profile_id)
+        tsrs = tsr_module.get_tsrs_by_student(student.id)
+
+        return render_template('create_request.html', tsrs=tsrs, user_group=get_role_name())
+
+    @login_required
+    def post(self):
+        print(request.form.get('quantity'),
+              request.form.get('tsr'))
+        return redirect('/create_request')
 
 
 class ShowRequests(MethodView):
@@ -233,9 +242,7 @@ class ShowRequests(MethodView):
         user = user_module.get_user()
         student = student_module.get_single_student(user.profile_id)
         requests = request_module.get_student_requests(student.id)
-        tsrs = tsr_module.get_tsrs_list()
-
-        return render_template('show_requests.html', requests=requests, tsrs=tsrs, user_group=get_role_name())
+        return render_template('show_requests.html', requests=requests, user_group=get_role_name())
 
 
 class RemoveRequest(MethodView):
@@ -243,3 +250,13 @@ class RemoveRequest(MethodView):
     def post(self, request_id):
         request_module.remove_request(request_id)
         return redirect('/student_requests')
+
+
+class ShowRequest(MethodView):
+    @login_required
+    def get(self, request_id):
+        found_request = request_module.get_request_by_id(request_id)
+        tsr = None
+        if found_request.tsr_id and found_request.problem:
+            tsr = tsr_module.get_tsr_by_id(found_request.tsr_id)
+        return render_template('show_request.html', found_request=found_request, tsr=tsr, user_group=get_role_name())
