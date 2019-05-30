@@ -11,5 +11,9 @@ class RequestStrategy(ABC):
         pass
 
     @abstractmethod
+    def update(self, request_obj):
+        pass
+
+    @abstractmethod
     def load_all(self, cursor):
         pass

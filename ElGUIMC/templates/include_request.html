@@ -3,11 +3,18 @@
         <div class="col s12 m5 l5 xl5">
             <h5>Заявка №{{ request.id }} ({% if request.quantity %}справка{% elif request.tsr_id %}обслуживание ТСР{% endif %})</h5>
             <p>Статус: {{ request.status }}</p>
-            <p>Дата создания: {{ request.creation_time }}</p>
+            <p>Дата создания: {{ request.creation_time.strftime('%Y-%m-%d %H:%M:%S') }}</p>
         </div>
-        <div class="col s12 m6 l6 xl6 valign-wrapper right" style="margin-top: 30px; margin-right: 30px;">
-            <a href="/request/{{ request.id }}" class="blue darken-1 waves-effect btn-large btn-custom" style="margin-right: 30px">Подробнее</a>
-            <button type="submit" class="red darken-1 waves-effect btn-large btn-custom">Отменить</button>
-        </div>
+        {% if user_group == "students" %}
+            <div class="col s12 m6 l6 xl6 valign-wrapper right" style="margin-top: 30px; margin-right: 30px;">
+                <a href="/request/{{ request.id }}" class="blue darken-1 waves-effect btn-large btn-custom" style="margin-right: 30px">Подробнее</a>
+                <button type="submit" class="red darken-1 waves-effect btn-large btn-custom">Отменить</button>
+            </div>
+        {% endif %}
+        {% if user_group == "employees" %}
+            <div class="col s12 m3 l3 xl3 valign-wrapper right" style="margin-top: 30px; margin-right: 30px;">
+                <a href="/edit_request/{{ request.id }}" class="blue darken-1 waves-effect btn-large btn-custom" style="margin-right: 30px">Подробнее</a>
+            </div>
+        {% endif %}
     </form>
 </div>

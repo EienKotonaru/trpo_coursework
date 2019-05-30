@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 from src.views import CreateGroup, GroupsList, Menu, CreateCriteria, CreateValues, Registration, Login, Logout, \
     ProfileLoader, ShowRoles, ChangePermissions, StudentSettings, StudentsList, AssignCriterias, CreateTsr, \
-    CreateRequest, ShowRequests, RemoveRequest, ShowRequest
+    CreateRequest, ShowRequests, RemoveRequest, ShowRequest, RequestList, EditRequestStatus
 
 
 class Application:
@@ -36,3 +36,5 @@ class Application:
             self.server.add_url_rule('/remove_request/<request_id>', view_func=RemoveRequest.as_view('remove_request'))
             self.server.add_url_rule('/request/<request_id>', view_func=ShowRequest.as_view('show_request'))
             self.server.add_url_rule('/student_requests', view_func=ShowRequests.as_view('student_requests'))
+            self.server.add_url_rule('/all_requests', view_func=RequestList.as_view('all_requests'))
+            self.server.add_url_rule('/edit_request/<request_id>', view_func=EditRequestStatus.as_view('change_request'))

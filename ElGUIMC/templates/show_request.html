@@ -24,7 +24,7 @@
             {% endif %}
         </div>
 
-        <p class="right">Дата подачи: {{ found_request.creation_time }}</p>
+        <p class="right">Дата подачи: {{ found_request.creation_time.strftime('%Y-%m-%d %H:%M:%S') }}</p>
         <h5>Описание заявки</h5>
         {% if tsr %}
             <table>
@@ -60,6 +60,38 @@
                     </tr>
                 </tbody>
             </table>
+        {% endif %}
+
+        {% if user_group == "employees" %}
+            <div class="col s12 m12 l12 xl12 valign-wrapper left" style="margin-top: 30px; margin-right: 30px;">
+                <form id="create_tsr" action="/edit_request/{{ found_request.id }}" method="POST">
+                    <div class="row">
+
+                        <p>
+                            <label>
+                                <input name="status" type="radio" value="В рассмотрении" {% if found_request.status == "В рассмотрении"%}checked{% endif %}/>
+                                <span>В рассмотрении</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="status" type="radio" value="Ожидает участия студента" {% if found_request.status == "Ожидает участия студента"%}checked{% endif %}/>
+                                <span>Ожидает участия студента</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="status" type="radio" value="Выполнено" {% if found_request.status == "Выполнено"%}checked{% endif %}/>
+                                <span>Выполнено</span>
+                            </label>
+                        </p>
+
+                    </div>
+                    <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
+                        <button type="submit" name="tsr_req" class="blue darken-1 waves-effect btn-large btn-custom center">Обновить статус</button>
+                    </div>
+                </form>
+            </div>
         {% endif %}
     </div>
 

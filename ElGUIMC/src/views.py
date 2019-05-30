@@ -231,8 +231,16 @@ class CreateRequest(MethodView):
 
     @login_required
     def post(self):
-        print(request.form.get('quantity'),
-              request.form.get('tsr'))
+        user = user_module.get_user()
+        student = student_module.get_single_student(user.profile_id)
+        if "tsr_req" in request.form:
+            request_module.create_request(None, 'В рассмотрении', student.id,
+                                          tsr_id=request.form.get('tsr'),
+                                          problem=request.form.get('problem'))
+        elif "doc_req" in request.form:
+            request_module.create_request(None, 'В рассмотрении', student.id,
+                                          quantity=request.form.get('quantity'),
+                                          purpose=request.form.get('purpose'))
         return redirect('/create_request')
 
 
@@ -260,3 +268,26 @@ class ShowRequest(MethodView):
         if found_request.tsr_id and found_request.problem:
             tsr = tsr_module.get_tsr_by_id(found_request.tsr_id)
         return render_template('show_request.html', found_request=found_request, tsr=tsr, user_group=get_role_name())
+
+
+class RequestList(MethodView):
+    @login_required
+    def get(self):
+        requests = request_module.get_all_requests()
+        return render_template('show_requests.html', requests=requests, user_group=get_role_name())
+
+
+class EditRequestStatus(MethodView):
+    @login_required
+    def get(self, request_id):
+        found_request = request_module.get_request_by_id(request_id)
+        tsr = None
+        if found_request.tsr_id and found_request.problem:
+            tsr = tsr_module.get_tsr_by_id(found_request.tsr_id)
+        return render_template('show_request.html', found_request=found_request, tsr=tsr, user_group=get_role_name())
+
+    @login_required
+    def post(self, request_id):
+        request_module.change_request_status(request_id, request.form.get("status"))
+
+        return redirect('/edit_request/' + str(request_id))

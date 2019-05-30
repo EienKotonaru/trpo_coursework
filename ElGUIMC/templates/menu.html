@@ -34,6 +34,14 @@
             <a href="/student_requests"><button class="blue darken-1 waves-effect btn-large btn-custom" style="width: 50%;">Мои заявки</button></a>
         </div>
     {% endif %}
+    {% if user_group == "employees" %}
+        <div class="col s12 m12 l12 center-align" style="margin-bottom: 50px">
+            <a href="/all_students"><button class="blue darken-1 waves-effect btn-large btn-custom" style="width: 50%;">Реабилитационный потенциал</button></a>
+        </div>
+        <div class="col s12 m12 l12 center-align" style="margin-bottom: 50px">
+            <a href="/all_requests"><button class="blue darken-1 waves-effect btn-large btn-custom" style="width: 50%;">Управление заявками</button></a>
+        </div>
+    {% endif %}
     </div>
 
 {% endblock %}

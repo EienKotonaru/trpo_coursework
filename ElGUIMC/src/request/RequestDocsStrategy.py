@@ -7,11 +7,15 @@ request_set = RequestSet()
 
 class DocsRequestStrategy(RequestStrategy):
     def insert(self, request_obj):
-        return "INSERT INTO docsrequests(status, student_id, quantity, purpose) VALUES ('{}', {}, {}, '{}') RETURNING id;" \
+        return "INSERT INTO docsrequests(status, student_id, quantity, purpose) VALUES ('{}', {}, {}, '{}') RETURNING id, creation_time;" \
             .format(request_obj.status, request_obj.student_id, request_obj.quantity, request_obj.purpose)
 
     def delete(self, request_obj):
         return "DELETE FROM docsrequests WHERE id={};".format(request_obj.id)
+
+    def update(self, request_obj):
+        return "UPDATE docsrequests SET status='{}', student_id={}, quantity={}, purpose='{}' WHERE id={};"\
+            .format(request_obj.status, request_obj.student_id, request_obj.quantity, request_obj.purpose, request_obj.id)
 
     def load_all(self, cursor):
         cursor.execute("SELECT * FROM docsrequests;")

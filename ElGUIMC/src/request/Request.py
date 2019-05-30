@@ -1,5 +1,5 @@
 class Request:
-    def __init__(self, finish_time, status, student_id, quantity=None, purpose=None, problem=None, tsr_id=None,
+    def __init__(self, finish_time, status, student_id, quantity=0, purpose=None, problem=None, tsr_id=0,
                  creation_time=None, id=0):
         self.id = id
         self.creation_time = creation_time

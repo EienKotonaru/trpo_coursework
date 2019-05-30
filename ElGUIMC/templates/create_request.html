@@ -25,7 +25,7 @@
                 <label>Тип заявки</label>
             </div>
         </div>
-        <form id="criteria_template" action="/create_request" method="POST">
+        <form id="create_doc" action="/create_request" method="POST" style="display: none;">
             <div class="row">
 
                 <div class="input-field col s12 m12 l12 xl12">
@@ -41,11 +41,11 @@
                 </div>
             </div>
             <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
-                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Создать заявку</button>
+                <button type="submit" name="doc_req" class="blue darken-1 waves-effect btn-large btn-custom center" id="add_criteria">Создать заявку</button>
             </div>
         </form>
 
-        <form id="criteria_template" action="/create_request" method="POST">
+        <form id="create_tsr" action="/create_request" method="POST" style="display: none;">
             <div class="row">
 
                 {% for tsr in tsrs %}
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="col s1 m1 l1 center-align" style="margin-bottom: 80px">
-                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom center">Создать заявку</button>
+                <button type="submit" name="tsr_req" class="blue darken-1 waves-effect btn-large btn-custom center">Создать заявку</button>
             </div>
         </form>
     </div>
