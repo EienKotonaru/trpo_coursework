@@ -5,7 +5,6 @@
 {%block custom_css%}
 {%endblock%}
 
-
 {% block content %}
 
     <div id="page_forms" class="container" style="margin-top: 32px">
@@ -25,29 +24,35 @@
             <p>Без предоставления общежития</p>
         {% endif %}
         <form class="page" action="/assign_criterias/{{ student.id }}" method="POST" >
-        <h5>Критерии</h5>
+        <h5 style="margin-top: 30px">Критерии</h5>
             {% for criteria in criterias %}
 
                 <div class="row">
                     <p class="p_id">{{ criteria.name }}, {{ criteria.measure }}</p>
-                    <div class="input-field col s12 m2 l2 xl2">
+                    <div class="input-field col s12 m4 l4 xl4">
                         <p>
                             <label>
-                                <input type="checkbox" />
-                                <span>Выбран?</span>
+                                <input class="assigned" type="checkbox" {% if criteria.id in student_criterias | map(attribute='criteria_id') %}checked{% endif %}/>
+                                <span>Отслеживается?</span>
                             </label>
                         </p>
                     </div>
-                    <div class="input-field col s12 m5 l5 xl5">
-                        <input type="text" data-length="2" id="weight" maxlength="2" name="weight" class="validate" required aria-required="true">
-                        <label for="weight">Весовой коэффициент</label>
-                        <span class="helper-text" data-error="Поле не заполнено или заполнено неверно. Для ввода используйте только буквы." data-success="">Обязательное поле</span>
+                    <div class="input-field col s12 m5 l5 xl5 weight_div" {% if criteria.id not in student_criterias | map(attribute='criteria_id') %}style="display: none;"{% endif %}>
+                        <input type="text" data-length="1" id="weight" maxlength="1"
+                        {% for student_criteria in student_criterias %}
+                            {% if student_criteria.criteria_id == criteria.id %}
+                                value="{{ student_criteria.weight }}"
+                            {% endif %}
+                        {% endfor %}
+                         name="{{ criteria.id }}" class="validate weight_input" title="Используйте только цифры для заполнения данного поля" pattern="^[0-9]+$">
+                                <label for="weight">Весовой коэффициент</label>
+                                <span class="helper-text" data-success=""></span>
                     </div>
                 </div>
 
             {% endfor %}
             <div class="col12 s6 m2 l2 center-align">
-                <button type="submit" name="save" class="blue darken-1 waves-effect btn-large btn-custom save_page">Сохранить</button>
+                <button type="submit" class="blue darken-1 waves-effect btn-large btn-custom save_page">Сохранить</button>
             </div>
         </form>
     </div>
@@ -55,4 +60,5 @@
 {% endblock %}
 
 {%block custom_js%}
+    <script src="{{ url_for('static', filename='js/assign_criteria.js') }}"></script>
 {%endblock%}

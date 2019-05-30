@@ -1,11 +1,12 @@
 <div class="row" style="border:2px solid #1e88e5; border-radius: 20px;">
-    <div class="col s12 m6 l6 xl6">
+    <div class="col s12 m5 l5 xl5">
         <h5>{{ student.last_name }} {{ student.first_name }} {{ student.middle_name}}</h5>
         <p>Группа: {{ student.group }}</p>
         <p>Номер зачетной книжки: {{ student.grade_card }}</p>
     </div>
 
-    <div class="col s12 m2 l2 xl2 valign-wrapper right" style="margin-top: 30px; margin-right: 30px;">
-        <a href="/assign_criterias/{{ student.id }}"><button class="blue darken-1 waves-effect btn-large btn-custom right">Выбрать</button></a>
+    <div class="col s12 m6 l6 xl6 valign-wrapper right" style="margin-top: 30px; margin-right: 30px;">
+        <a href="/assign_criterias/{{ student.id }}"><button class="blue darken-1 waves-effect btn-large btn-custom right" style="margin-right: 30px;">Критерии</button></a>
+        <a href="/add_values/{{ student.id }}"><button class="blue darken-1 waves-effect btn-large btn-custom right">Значения</button></a>
     </div>
 </div>

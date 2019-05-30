@@ -18,7 +18,7 @@ class ValueMapper(metaclass=Singleton):
 
     def insert(self, value_obj):
         cursor = self.db.cursor()
-        cursor.execute("INSERT INTO CriteriaValues (value, assignment_time, criteria_id) VALUES (%s, %s, %s) RETURNING id;", (value_obj.value, strftime("%Y-%m-%d %H:%M:%S", value_obj.assignment_time), value_obj.criteria_id))
+        cursor.execute("INSERT INTO CriteriaValues (value, assignment_time, criteria_id, student_id) VALUES (%s, %s, %s, %s) RETURNING id;", (value_obj.value, strftime("%Y-%m-%d %H:%M:%S", value_obj.assignment_time), value_obj.criteria_id, value_obj.student_id))
         self.db.commit()
         value_obj.set_id(cursor.fetchone()[0])
         cursor.close()
@@ -33,11 +33,13 @@ class ValueMapper(metaclass=Singleton):
         for value_entry in value_entries:
             value_obj = value_set.find_by_all_fields(value_entry[cols_order.index("value")],
                                                      value_entry[cols_order.index("assignment_time")],
-                                                     value_entry[cols_order.index("criteria_id")])
+                                                     value_entry[cols_order.index("criteria_id")],
+                                                     value_entry[cols_order.index("student_id")])
             if not value_obj:
                 value_obj = Value(value_entry[cols_order.index("value")],
                                   value_entry[cols_order.index("assignment_time")],
                                   value_entry[cols_order.index("criteria_id")],
+                                  value_entry[cols_order.index("student_id")],
                                   value_entry[cols_order.index("id")])
                 value_set.add_value(value_obj)
         cursor.close()

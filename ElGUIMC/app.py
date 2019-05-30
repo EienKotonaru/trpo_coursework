@@ -23,7 +23,7 @@ class Application:
             self.server.add_url_rule('/groups', view_func=GroupsList.as_view('all_groups'))
             self.server.add_url_rule('/add_criteria/<group_id>', view_func=CreateCriteria.as_view('new_criteria'))
             self.server.add_url_rule('/add_tsr', view_func=CreateTsr.as_view('new_tsr'))
-            self.server.add_url_rule('/add_values/<group_id>', view_func=CreateValues.as_view('new_values'))
+            self.server.add_url_rule('/add_values/<student_id>', view_func=CreateValues.as_view('new_values'))
             self.server.add_url_rule('/all_students', view_func=StudentsList.as_view('all_students'))
             self.server.add_url_rule('/permissions', view_func=ShowRoles.as_view('permissions'))
             self.server.add_url_rule('/change_permissions/<role_id>', view_func=ChangePermissions

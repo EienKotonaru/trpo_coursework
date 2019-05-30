@@ -23,6 +23,10 @@ class CriteriaModule(metaclass=Singleton):
             criteria.measure = measure
             criteria_mapper.update(criteria)
 
+    def get_criteria_by_id(self, criteria_id):
+        criteria_mapper.load_all()
+        return criteria_set.find_by_id(criteria_id)
+
     def get_criterias_list(self):
         criteria_mapper.load_all()
         return criteria_set.criterias

@@ -9,13 +9,13 @@
 {% block content %}
 
     <div id="criteria_forms" class="container" style="margin-top: 32px">
-        <h4 class="center-align" style="margin-bottom: 32px">Внесите значения критериев в группу "{{ group.name }}"</h4>
+        <h4 class="center-align" style="margin-bottom: 32px">Внесите значения критериев</h4>
 
         <div class="row">
             <a href="/"><button class="blue darken-1 waves-effect btn-large btn-custom left">В меню</button></a>
         </div>
 
-        <form action="/add_values/{{ group.id }}" method="POST">
+        <form action="/add_values/{{ student_id }}" method="POST">
             {% for criteria in criterias %}
                 {% include 'include_criteria.html' with context %}
             {% endfor %}
@@ -48,9 +48,51 @@
                 </table>
             </div>
         {% endfor %}
+    <canvas id="myChart" width="400" height="400"></canvas>
     </div>
-
 {% endblock %}
 
 {%block custom_js%}
+    <script src="{{ url_for('static', filename='js/Chart.js-2.8.0/dist/Chart.js') }}"></script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            {% for date in stat_dates %}
+                "{{ date }}",
+            {% endfor %}
+        ],
+        datasets: [{
+            label: '# of Votes',
+            data: {{ stat_values }},
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+                 'rgba(54, 162, 235, 0.2)',
+                 'rgba(54, 162, 235, 0.2)',
+                 'rgba(54, 162, 235, 0.2)',
+                 'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+    </script>
 {%endblock%}

@@ -17,6 +17,7 @@ from src.profile.ProfileModule import ProfileModule
 from src.employee.EmployeeModule import EmployeeModule
 from src.tsr.TsrModule import TsrModule
 from src.request.RequestModule import RequestModule
+from src.studentcriteria.StudentCriteriaModule import StudentCriteriaModule
 
 
 user_module = UserModule()
@@ -29,6 +30,7 @@ profile_module = ProfileModule()
 employee_module = EmployeeModule()
 tsr_module = TsrModule()
 request_module = RequestModule()
+student_criteria_module = StudentCriteriaModule()
 
 DES_KEY = b"eguimc19"
 
@@ -112,16 +114,23 @@ class CreateCriteria(MethodView):
 
 class CreateValues(MethodView):
     @login_required
-    def get(self, group_id):
-        group = group_module.get_single_group(group_id)
-        criterias = criteria_module.get_criterias_by_group(group_id)
-        values_history = value_module.get_values_history(criterias)
-        return render_template('add_values.html', group=group, criterias=criterias, values_history=values_history, user_group=get_role_name())
+    def get(self, student_id):
+        student_criterias = student_criteria_module.get_student_criterias_list(student_id)
+        criterias = []
+        for sc in student_criterias:
+            criteria = criteria_module.get_criteria_by_id(sc.criteria_id)
+            sc.criteria_name = criteria.name
+            criterias.append(criteria)
+        values_history = value_module.get_values_history(criterias, student_id)
+        statistics = value_module.prepare_statistics(student_id, student_criterias)
+        return render_template('add_values.html', student_id=student_id, criterias=criterias,
+                               values_history=values_history, user_group=get_role_name(),
+                               stat_dates=list(statistics.keys()), stat_values=list(statistics.values()))
 
     @login_required
-    def post(self, group_id):
-        value_module.create_values_for_criterias(request.form.getlist('value'), request.form.getlist('criteria_id'))
-        return redirect('/add_values/' + str(group_id))
+    def post(self, student_id):
+        value_module.create_values_for_criterias(request.form.getlist('value'), request.form.getlist('criteria_id'), student_id)
+        return redirect('/add_values/' + str(student_id))
 
 
 class ProfileLoader(MethodView):
@@ -190,7 +199,13 @@ class AssignCriterias(MethodView):
     def get(self, student_id):
         student = student_module.get_single_student(student_id)
         criterias = criteria_module.get_criterias_list()
-        return render_template('assign_criterias.html', student=student, criterias=criterias, user_group=get_role_name())
+        student_criterias = student_criteria_module.get_student_criterias_list(student_id)
+        return render_template('assign_criterias.html', student=student, criterias=criterias, student_criterias=student_criterias, user_group=get_role_name())
+
+    @login_required
+    def post(self, student_id):
+        student_criteria_module.assign_criterias(request.form, student_id)
+        return redirect('/all_students')
 
 
 class CreateTsr(MethodView):
